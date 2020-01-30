@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Maîtrise des Petits Chanteurs de Québec</title>
+
+	<meta charset="UTF-8">
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script>!window.jQuery && document.write('<script src="cdn/jquery-3.4.1.min.js"><\/script>')</script>
+
+	<style>
+
+	/*Colors variables*/
+	:root {
+	  --logo-red: #6F0B31;
+		--logo-blue: #145E8C;
+		--logo-gold: #FBCD21;
+		--dark-red: #3d051c;
+		--dark-blue: #0f0d21;
+		--light-red: #d3b5c1;
+		--light-blue: #b8cedc;
+	}
+
+	.darkBlue {
+		background-color: var(--dark-blue);
+		color: white;
+	}
+
+	.darkRed {
+		background-color: var(--dark-red);
+		color: white;
+	}
+
+	* {
+		box-sizing: border-box;
+		margin: 0;
+	}
+
+	body {
+		padding: 0;
+		margin: 0;
+		font-size: 0.8rem;
+		font-family:  'Josefin Slab', serif;
+	}
+
+	@media (min-width: 320px) {
+  	body { font-size: calc( 0.8rem + 2.5vw - 8px ); }
+	}
+
+	@media (min-width: 1280px) {
+  	body { font-size: calc( 0.8rem + 24px ); }
+	}
+
+	header {
+		background-color: var(--dark-red);
+		padding: 0 20px;
+		position: fixed;
+		width: 100%;
+		z-index: 99;
+	}
+
+	header img {
+		float:left;
+		height: 83%;
+		position: absolute;
+		top: 10%
+	}
+	header h1 {
+		color: white;/*var(--logo-gold);*/
+		display: block;
+		margin: 0;
+		position: absolute;
+		top: 10%;
+		left: 160px;
+
+		font-family: 'Open Sans Condensed', sans-serif;
+		font-weight: 300;
+	}
+
+	header h1 span {
+		display: inline-block;
+	}
+
+	h2 {
+		font-family: 'Open Sans Condensed', sans-serif;
+		font-weight: 300;
+		font-size: 1.5em;
+	}
+
+	main{
+		border-top: 180px solid var(--dark-red);
+
+	}
+
+	main .full {
+		width: 100%;
+		position: relative;
+	}
+
+
+	main .full div.caption {
+		position: absolute;
+		bottom: 5%;
+		margin: 0 40px;
+		padding: 0.5em 1em 0.4em;
+		width: auto;
+		background-color: rgba(255,255,255,0.8);
+		text-align: center;
+		border-radius: 20px;
+	}
+
+	main .full img.third {
+		width: 33.1%;
+		display:inline-block;
+    vertical-align: middle;
+		margin-right: -4px;
+	}
+
+	main .full div.twothird {
+		display: inline-block;
+		width: 66.1%;
+		text-align: center;
+		vertical-align: middle;
+		padding: 1em 5%;
+		margin-right: -4px;
+	}
+
+	dt {font-weight: bold;}
+
+	footer {
+		background-color: var(--dark-red);
+		color: white;
+		padding: 20px;
+	}
+
+	footer adress {
+		display: inline-block;
+		margin: 0 40px 20px 0;
+	}
+
+	footer a {
+		color: white;
+	}
+	</style>
+</head>
+
+<body>
+<header>
+	<img src="logo/logo.png">
+	<h1>La maîtrise des petits <span>chanteurs de Québec</span></h1>
+</header>
+
+<main>
+	<div class="full">
+		<img class="full" src="images/la-maitrise-de-quebec2009-resized.jpg">
+		<div class="caption">Les petits chanteurs, octobre 2009</div>
+	</div>
+
+	<div class="full darkRed" style="margin-top:-10px;">
+		<div class="twothird">
+			<h2>La Maîtrise</h2>
+			<p>Notre équipe de musiciens professionnels, sous la direction de Mme Céline Binet, veille à l'épanouissement musical des petits chanteurs.</p>
+		</div>
+		<img class="third" src="images/Maizerets Corrige.jpg">
+	</div>
+
+	<div class="full darkBlue">
+		<img class="third" src="images/celine.jpg">
+		<div class="twothird">
+			<h2>Notre Équipe</h2>
+			<p>Notre équipe de musiciens professionnels, sous la direction de Mme Céline Binet, veille à l'épanouissement musical des petits chanteurs.</p>
+		</div>
+	</div>
+
+
+</main>
+
+<footer>
+	<adress>La Maîtrise des petits chanteurs de Québec<br>835, avenue Brown<br>Québec, QC  G1S 4S1</adress>
+	<adress>Directrice artistique et musicale : Céline Binet<br>(418) 686-4040 poste 3641<br><a href="mailto:binet.celine@cscapitale.qc.ca">binet.celine@cscapitale.qc.ca</a></adress>
+	<adress>Secrétariat :<br>(418) 686-4040 poste 3640<br><a href="mailto:ecole.maitrise@cscapitale.qc.ca">ecole.maitrise@cscapitale.qc.ca</a></adress>
+</footer>
+
+<script>
+
+function header(c) {
+	//Peut être appelée avec un paramètre 'small' ou 'large' pour animer le changement de type
+	//ou sans paramètre pour recalculer les dimensions (resize) sans animation.
+  if(c=='small') {$('header').addClass('small');}
+	else if(c=='large') {$('header').removeClass('small');}
+
+	if($('header').hasClass('small')) { //Définit les dimensions pour le small header
+		var w = $( window ).width()/840;
+		var hHeight = 80, hFontSize = 44, hWidth = 660, hLeft = 70;
+	}
+	else { //Définit les dimensions pour le header complet
+		var w = $( window ).width()/640;
+		var hHeight = 180, hFontSize = 54, hWidth = 540, hLeft = 140;
+	}
+
+	if(w<1) { //Modifie les dimensions en fonction de la largeur de l'écran
+		hHeight *= w;
+		hFontSize *= w;
+		hWidth *= w;
+		hLeft *= w;
+	}
+
+	if(typeof c == 'undefined') {
+		$("header").height(hHeight);
+		$("header h1").css({"fontSize": hFontSize, "width": hWidth, "left": hLeft+20});
+		$("main").css({"borderTopWidth": hHeight});
+	}
+	else {
+		$("header").stop().animate({height:hHeight});
+	  $("header h1").stop().animate({fontSize:hFontSize, width: hWidth, left:hLeft+20});
+    $("main").stop().animate({borderTopWidth:hHeight});
+	}
+}
+
+
+$(document).ready(function() {
+	header();
+
+	$(window).resize(function() {
+		header();
+	});
+
+	$(window).scroll(function (event) {
+		var scroll=$(window).scrollTop();
+    if(scroll && !$("header").hasClass('small')) { header('small'); }
+		if(!scroll && $("header").hasClass('small')) { header('large'); }
+	});
+});
+</script>
+
+</body>
+</html>

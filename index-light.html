@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Maîtrise des Petits Chanteurs de Québec</title>
+
+	<meta charset="UTF-8">
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script>!window.jQuery && document.write('<script src="cdn/jquery-3.4.1.min.js"><\/script>')</script>
+
+	<style>
+	/*Colors variables*/
+	:root {
+	  --logo-red: #6F0B31;
+		--logo-blue: #145E8C;
+		--logo-gold: #FBCD21;
+		--dark-red: #3d051c;
+		--dark-blue: #0f0d21;
+		--light-red: #d3b5c1;
+		--light-blue: #b8cedc;
+	}
+
+	.darkBlue {
+		background-color: var(--dark-blue);
+		color: white;
+	}
+
+	.darkRed {
+		background-color: var(--dark-red);
+		color: white;
+	}
+
+	* {
+		box-sizing: border-box;
+		margin: 0;
+	}
+
+	body {
+		padding: 0;
+		margin: 0;
+		font-size: 0.8rem;
+		font-family:  'Josefin Slab', serif;
+	}
+
+	@media (min-width: 320px) {
+  	body { font-size: calc( 0.8rem + 2.5vw - 8px ); }
+	}
+
+	@media (min-width: 1280px) {
+  	body { font-size: calc( 0.8rem + 24px ); }
+	}
+
+	header {
+		background-color: white;
+		padding: 0 20px;
+		position: fixed;
+		width: 100%;
+		z-index: 99;
+	}
+
+	header img {
+		float:left;
+		height: 83%;
+		position: absolute;
+		top: 10%
+	}
+	header h1 {
+		color: var(--dark-blue);
+		display: block;
+		margin: 0;
+		position: absolute;
+		top: 10%;
+		left: 160px;
+
+		font-family: 'Open Sans Condensed', sans-serif;
+		font-weight: 300;
+	}
+
+	header h1 span {
+		display: inline-block;
+	}
+
+	h2 {
+		font-family: 'Open Sans Condensed', sans-serif;
+		font-weight: 300;
+		font-size: 1.5em;
+	}
+
+	main{
+		border-top: 180px solid white;
+
+	}
+
+	.full {
+		width: 100%;
+		position: relative;
+		padding: 1em;
+	}
+
+
+	.full img.third {
+		width: 33%;
+		max-width: 300px;
+		display:inline-block;
+    vertical-align: middle;
+	}
+
+	.full div.twothird {
+		display: inline-block;
+		width: 65%;
+		text-align: center;
+		vertical-align: middle;
+		padding: 1em 5%;
+	}
+
+	.band {
+		width: 100%;
+		height: 20vw;
+		background-repeat: no-repeat;
+		background-size: 70%;
+		background-position: 50% 50%;
+		background-color: var(--dark-blue);
+		transition: all 1s ease;
+		background-blend-mode: luminosity;
+	}
+
+	.band.opened {
+		height: 58vw;
+		background-size: 100%;
+		background-color: transparent;
+	}
+
+	#PetitsChanteurs2009 {
+		background-image: url("images/la-maitrise-de-quebec2009-resized.jpg");
+	}
+
+
+	.caption {
+		padding: 0.5em 1em 1em;
+	}
+
+
+	dt {font-weight: bold;}
+	dd {padding-left: 2em;}
+	dl {padding-left: 1em;}
+
+	footer {
+		background-color: var(--dark-red);
+		color: white;
+		padding: 20px;
+	}
+
+	footer adress {
+		display: inline-block;
+		margin: 0 40px 20px 0;
+	}
+
+	footer a {
+		color: white;
+	}
+	</style>
+</head>
+
+<body>
+<header>
+	<img src="logo/logo.png">
+	<h1>La maîtrise des petits <span>chanteurs de Québec</span></h1>
+</header>
+
+<main>
+	<div class="band" id="PetitsChanteurs2009"></div>
+
+	<div class="caption">Les petits chanteurs, octobre 2009</div>
+
+
+	<!--<div class="clip">
+		<img class="filtered" src="images/la-maitrise-de-quebec2009-resized.jpg">
+	</div>
+
+	<div>Les petits chanteurs, octobre 2009</div>-->
+
+	<div class="full">
+		<div class="twothird">
+			<h2>La Maîtrise</h2>
+			<p>Notre équipe de musiciens professionnels, sous la direction de Mme Céline Binet, veille à l'épanouissement musical des petits chanteurs.</p>
+		</div>
+		<img class="third" src="images/Maizerets Corrige.jpg">
+	</div>
+
+	<div class="full">
+		<img class="third" src="images/celine.jpg">
+		<div class="twothird">
+			<h2>Notre Équipe</h2>
+			<p>Notre équipe de musiciens professionnels, sous la direction de Mme Céline Binet, veille à l'épanouissement musical des petits chanteurs.</p>
+		</div>
+	</div>
+
+	<h2>Structure actuelle:</h2>
+
+	<dl>
+	  <dt>Accueil
+	  	<dd>Concerts et autres activités à venir et passés</dd></dt>
+	  <dt>Nouvelles
+	  	<dd>Concerts et autres activités à venir et passés</dd></dt>
+	  <dt>Comédie musicale avec les jeunes du secondaire </dt>
+	  <dt>Corporation
+	  	<dd>Règlements de la corpo</dd></dt>
+	  <dt>Tournées de 2002 à 2016</dt>
+	  <dt>Présentation</dt>
+	  <dt>Concerts
+	  	<dd>Concerts à venir et passés (plus complet)</dd></dt>
+	  <dt>Historique</dt>
+	  <dt>Directrice artistique</dt>
+	  <dt>Inscription</dt>
+	  <dt>Le magasin
+	  	<dd>Heures d'ouverture, uniformes (classe concert...)</dd></dt>
+	  <dt>Images et sons</dt>
+	  <dt>Contact
+	  	<dd>Adresses courriel + téléphones</dd></dt>
+	  <dt>Liens utiles</dt>
+	  <dt>Tournées</dt>
+	  <dt>Hors menu: info-parents</dt>
+	</dl>
+
+
+	<h2>Structure proposée:</h2>
+	<dl>
+	  <dt>Accueil
+	  	<dd>Photos, vidéo?, idéalement (prochain/dernier concert, post facebook?), Courte présentation de la maîtrise, de l'équipe.</dd></dt>
+	  <dt>La maîtrise
+	  	<dd>regroupe les pages Présentation, Historique, Directrice artistique, contact? (ou seulement en pied de page), ajout de l'équipe, Liens vers les partenaires</dd></dt>
+	  <dt>Parents
+	  	<dd>Calendrier (post facebook?), Uniformes, magasin, Règlements de la corpo, Coûts?</dd></dt>
+	  <dt>Réalisations
+	  	<dd>Vidéos?, Tournées, Concerts passés, Prix gagnés...</dd></dt>
+	  <dt>Inscription</dt>
+
+	  <dt>Pied de page:
+			<dd>Adresses courriel + téléphones</dd></dt>
+
+	  <dt>Nouvelles, concerts, comédie musicale &rightarrow; Page Facebook</dt>
+	</dl>
+
+</main>
+
+<footer>
+	<adress>La Maîtrise des petits chanteurs de Québec<br>835, avenue Brown<br>Québec, QC  G1S 4S1</adress>
+	<adress>Directrice artistique et musicale : Céline Binet<br>(418) 686-4040 poste 3641<br><a href="mailto:binet.celine@cscapitale.qc.ca">binet.celine@cscapitale.qc.ca</a></adress>
+	<adress>Secrétariat :<br>(418) 686-4040 poste 3640<br><a href="mailto:ecole.maitrise@cscapitale.qc.ca">ecole.maitrise@cscapitale.qc.ca</a></adress>
+</footer>
+
+<script>
+
+function header(c) {
+	//Peut être appelée avec un paramètre 'small' ou 'large' pour animer le changement de type
+	//ou sans paramètre pour recalculer les dimensions (resize) sans animation.
+  if(c=='small') {$('header').addClass('small');}
+	else if(c=='large') {$('header').removeClass('small');}
+
+	if($('header').hasClass('small')) { //Définit les dimensions pour le small header
+		var w = $( window ).width()/840;
+		var hHeight = 80, hFontSize = 44, hWidth = 660, hLeft = 70, hBorder = 180;
+	}
+	else { //Définit les dimensions pour le header complet
+		var w = $( window ).width()/640;
+		var hHeight = 180, hFontSize = 54, hWidth = 540, hLeft = 140, hBorder = 180;
+	}
+
+	if(w<1) { //Modifie les dimensions en fonction de la largeur de l'écran
+		hHeight *= w;
+		hFontSize *= w;
+		hWidth *= w;
+		hLeft *= w;
+		hBorder *= w;
+	}
+
+	if(typeof c == 'undefined') {
+		$("header").height(hHeight);
+		$("header h1").css({"fontSize": hFontSize, "width": hWidth, "left": hLeft+20});
+		$("main").css({"borderTopWidth": hBorder});
+	}
+	else {
+		$("header").stop().animate({height:hHeight});
+	  $("header h1").stop().animate({fontSize:hFontSize, width: hWidth, left:hLeft+20});
+    $("main").stop().animate({borderTopWidth: hBorder});
+	}
+}
+
+
+$(document).ready(function() {
+	header();
+
+	$(window).resize(function() {
+		header();
+	});
+
+	$(window).scroll(function (event) {
+		var scroll= ($(window).scrollTop()>0);
+    if(scroll && !$("header").hasClass('small')) { header('small'); $("#PetitsChanteurs2009").addClass("opened"); window.scrollTo($(window).scrollX,0);}
+		if(!scroll && $("header").hasClass('small')) { header('large'); $("#PetitsChanteurs2009").removeClass("opened"); }
+	});
+});
+</script>
+
+</body>
+</html>
