@@ -21,6 +21,7 @@
 		--dark-blue: #0f0d21;
 		--light-red: #d3b5c1;
 		--light-blue: #b8cedc;
+		--light-gold: #fef9e6; /*#fef3cd;*/
 	}
 
 	.darkBlue {
@@ -83,6 +84,11 @@
 		display: inline-block;
 	}
 
+	header .menu {
+		float:right;
+		padding: 10px 20px;
+	}
+
 	h2 {
 		font-family: 'Open Sans Condensed', sans-serif;
 		font-weight: 300;
@@ -91,7 +97,76 @@
 
 	main{
 		border-top: 180px solid white;
+	}
 
+	.container {
+		display: grid;
+  	grid-template-columns: auto;
+		grid-template-rows: 10% 35% 20% 35%;
+		min-height: 100vh;
+		justify-items: center;
+		align-items: center;
+	}
+
+	.container.left {
+		grid-template-areas:
+			"header"
+			"image"
+			"image"
+			"main";
+	}
+
+	.container.right {
+		grid-template-areas:
+			"header"
+			"main"
+			"image"
+			"image";
+	}
+
+	@media screen and (min-width: 700px) {
+  	.container {
+			grid-template-columns: 33% auto 33%;
+			grid-template-rows: 20% auto;
+		}
+
+		.container.left {
+			grid-template-areas:
+				"header header header"
+				"main main image";
+		}
+
+		.container.right {
+			grid-template-areas:
+				"header header header"
+				"image main main";
+		}
+	}
+
+	.container:nth-of-type(2n+1),  .container:nth-of-type(2n+1) h2 {
+		background-color: var(--light-gold);
+	}
+
+
+	.container h2 {
+  	grid-area: header;
+		place-self: stretch;
+		text-align: center;
+		position: sticky;
+		top: 80px;
+		background-color: white;
+		padding-top: 4%;
+	}
+
+	.container img {
+  	grid-area: image;
+		max-width: 95%;
+		width: 300px;
+	}
+
+	.container .text {
+		grid-area: main;
+		padding: 5vw;
 	}
 
 	.full {
@@ -168,7 +243,7 @@
 <body>
 <header>
 	<img src="logo/logo.png">
-	<h1>La maîtrise des petits <span>chanteurs de Québec</span></h1>
+	<h1>La Maîtrise des petits <span>chanteurs de Québec</span></h1>
 </header>
 
 <main>
@@ -182,6 +257,22 @@
 	</div>
 
 	<div>Les petits chanteurs, octobre 2009</div>-->
+
+	<article class="container right">
+		<h2>La Maîtrise</h2>
+		<div class="text">
+			<p>Notre équipe de musiciens professionnels, sous la direction de Mme Céline Binet, veille à l'épanouissement musical des petits chanteurs.</p>
+		</div>
+		<img src="images/Maizerets Corrige.jpg">
+	</article>
+
+	<article class="container left">
+		<h2>Notre Équipe</h2>
+		<div class="text">
+			<p>Notre équipe de musiciens professionnels, sous la direction de Mme Céline Binet, veille à l'épanouissement musical des petits chanteurs.</p>
+		</div>
+		<img src="images/celine.jpg">
+	</article>
 
 	<div class="full">
 		<div class="twothird">
@@ -236,11 +327,13 @@ function header(c) {
 		$("header").height(hHeight);
 		$("header h1").css({"fontSize": hFontSize, "width": hWidth, "left": hLeft+20});
 		$("main").css({"borderTopWidth": hBorder});
+		$(".container h2").css({"top": hHeight});
 	}
 	else {
 		$("header").stop().animate({height:hHeight});
 	  $("header h1").stop().animate({fontSize:hFontSize, width: hWidth, left:hLeft+20});
     $("main").stop().animate({borderTopWidth: hBorder});
+		$(".container h2").css({"top": hHeight});
 	}
 }
 
@@ -253,14 +346,13 @@ $(document).ready(function() {
 	});
 
 
-	//$(window).scroll(function (event) {
+
 	function scrolling()  {
 		var scroll= ($(window).scrollTop()>0);
     if(scroll && !$("header").hasClass('small')) { header('small'); $("#PetitsChanteurs2009").addClass("opened"); }
 		if(!scroll && $("header").hasClass('small')) { header('large'); $("#PetitsChanteurs2009").removeClass("opened"); }
 		requestAnimationFrame(scrolling);
 	}
-	//});
 
 	requestAnimationFrame(scrolling);
 });
