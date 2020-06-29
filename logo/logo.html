@@ -3,54 +3,27 @@
   <title>Maîtrise des Petits Chanteurs de Québec</title>
 
 	<meta charset="UTF-8">
-	<style>
-		svg {
-			height:590px;
-		}
 
-		body {
-			background-image: url("logo nb.jpg");
-			background-repeat: no-repeat;
-			background-size: 480px 590px;
-			margin: 0;
-		}
+	<script src="../cdn/jquery-3.4.1.min.js"></script>
+
+	<style>
 	</style>
 </head>
 <body>
-	<svg  xmlns="http://www.w3.org/2000/svg"
-	    xmlns:xlink="http://www.w3.org/1999/xlink"
-	   width="284px"
-	   height="650px"
-	   viewBox="0 0 284 650"
-	   version="1.1">
+	Taille des images: <input type="range" min="30" max="600" value="250" class="slider" id="imageSize"><br>
+	<img src="logo.svg" height="250"/>
+	<img src="logo.png" height="250"/>
+	<br>
+	<img src="logo-nb.svg" height="250"/>
+	<img src="logo-nb.jpg" height="250"/>
 
-	   <style type="text/css" >
-	      <![CDATA[
+<script>
+	$(document).ready(function() {
 
-	        .note {
-	           	fill:#fac600;
-			fill-opacity:1;
-			stroke:none;
-	        }
-
-	      ]]>
-	    </style>
-
-	    <path class="note"
-	       d="m 164,0
-	v 472.37
-	c -54.14,-21.91 -123.82,-4.35 -154.64,47.01
-	c -11.43,27.35 -14.31,62.11 2.19,88.1
-	c 25.69,33.78 74.41,53.06 114.58,33.87
-	c 35.39,-15.21 74.7,-43.12 77.47,-84.94
-	v -412.48
-	c 25.65,1.67 42.23,25.35 58.39,42.72
-	c 8.66,10.7 18.23,28.26 19.39,3.27
-	c 6.22,-26.98 4.66,-60.04 -17.26,-79.67
-	c -25.25,-29.41 -57.71,-54.35 -60.52,-110.25
-	z"/>
-	</svg>
-
-
+		$('#imageSize').change(function() {
+			$('img').height(this.value);
+		});
+	});
+</script>
 </body>
 </html>
