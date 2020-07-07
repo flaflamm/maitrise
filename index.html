@@ -20,14 +20,13 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<script>!window.jQuery && document.write('<script src="cdn/jquery-3.4.1.min.js"><\/script>')</script>
 
+	<script src="includes/loadScript.js"></script>
+
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 
 <body>
-<header>
-	<img src="logo/logo.svg">
-	<h1>La Maîtrise des petits <span>chanteurs de Québec</span></h1>
-</header>
+
 
 <main>
 	<div class="band" id="PetitsChanteurs2009"></div>
@@ -59,72 +58,6 @@
 
 
 </main>
-
-<footer>
-	<adress>La Maîtrise des petits chanteurs de Québec<br>835, avenue Brown<br>Québec, QC  G1S 4S1</adress>
-	<adress>Directrice artistique et musicale : Céline Binet<br>(418) 686-4040 poste 3641<br><a href="mailto:binet.celine@cscapitale.qc.ca">binet.celine@cscapitale.qc.ca</a></adress>
-	<adress>Secrétariat :<br>(418) 686-4040 poste 3640<br><a href="mailto:ecole.maitrise@cscapitale.qc.ca">ecole.maitrise@cscapitale.qc.ca</a></adress>
-</footer>
-
-<script>
-
-function header(c) {
-	//Peut être appelée avec un paramètre 'small' ou 'large' pour animer le changement de type
-	//ou sans paramètre pour recalculer les dimensions (resize) sans animation.
-  if(c=='small') {$('header').addClass('small');}
-	else if(c=='large') {$('header').removeClass('small');}
-
-	if($('header').hasClass('small')) { //Définit les dimensions pour le small header
-		var w = $( window ).width()/840;
-		var hHeight = 80, hFontSize = 44, hWidth = 660, hLeft = 70, hBorder = 180;
-	}
-	else { //Définit les dimensions pour le header complet
-		var w = $( window ).width()/640;
-		var hHeight = 180, hFontSize = 54, hWidth = 540, hLeft = 140, hBorder = 180;
-	}
-
-	if(w<1) { //Modifie les dimensions en fonction de la largeur de l'écran
-		hHeight *= w;
-		hFontSize *= w;
-		hWidth *= w;
-		hLeft *= w;
-		hBorder *= w;
-	}
-
-	if(typeof c == 'undefined') {
-		$("header").height(hHeight);
-		$("header h1").css({"fontSize": hFontSize, "width": hWidth, "left": hLeft+20});
-		$("main").css({"borderTopWidth": hBorder});
-		$(".container h2").css({"top": hHeight});
-	}
-	else {
-		$("header").stop().animate({height:hHeight});
-	  $("header h1").stop().animate({fontSize:hFontSize, width: hWidth, left:hLeft+20});
-    $("main").stop().animate({borderTopWidth: hBorder});
-		$(".container h2").css({"top": hHeight});
-	}
-}
-
-
-$(document).ready(function() {
-	header();
-
-	$(window).resize(function() {
-		header();
-	});
-
-
-
-	function scrolling()  {
-		var scroll= ($(window).scrollTop()>0);
-    if(scroll && !$("header").hasClass('small')) { header('small'); $("#PetitsChanteurs2009").addClass("opened"); }
-		if(!scroll && $("header").hasClass('small')) { header('large'); $("#PetitsChanteurs2009").removeClass("opened"); }
-		requestAnimationFrame(scrolling);
-	}
-
-	requestAnimationFrame(scrolling);
-});
-</script>
 
 </body>
 </html>
