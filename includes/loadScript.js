@@ -6,15 +6,16 @@ function header(c) {
 
 	if($('header').hasClass('small')) { //Définit les dimensions pour le small header
 		var w = $( window ).width()/840;
-		var hHeight = 80, hPadding = 20, hFontSize = 44, hWidth = 660, hLeft = 70, hBorder = 180, mWidth = 42, mPadding = 20;
+		var hHeight = 116, iHeight = 66, hPadding = 20, hFontSize = 44, hWidth = 660, hLeft = 70, hBorder = 180, mWidth = 42, mPadding = 20;
 	}
 	else { //Définit les dimensions pour le header complet
 		var w = $( window ).width()/640;
-		var hHeight = 180, hPadding = 20, hFontSize = 54, hWidth = 540, hLeft = 140, hBorder = 180, mWidth = 50, mPadding = 35;
+		var hHeight = 216, iHeight = 150, hPadding = 20, hFontSize = 54, hWidth = 540, hLeft = 140, hBorder = 180, mWidth = 50, mPadding = 35;
 	}
 
 	if(w<1) { //Modifie les dimensions en fonction de la largeur de l'écran
 		hHeight *= w;
+		iHeight *= w;
 		hPadding *= w;
 		hFontSize *= w;
 		hWidth *= w;
@@ -25,14 +26,16 @@ function header(c) {
 	}
 
 	if(typeof c == 'undefined') {
-		$("header").css({"height": hHeight, "padding-left": hPadding, "padding-right": hPadding});
+		$("header").css({"height": hHeight});
+		$("header img").css({"left": hPadding, "height": iHeight});
 		$("header h1").css({"fontSize": hFontSize, "width": hWidth, "left": hLeft+20});
 		$("main").css({"borderTopWidth": hBorder});
 		$(".container h2").css({"top": hHeight});
 		$("header .menu").css({"width": mWidth, "padding-top": mPadding});
 	}
 	else {
-		$("header").stop().animate({height:hHeight, "padding-left": hPadding, "padding-right": hPadding});
+		$("header").stop().animate({height:hHeight});
+		$("header img").stop().animate({"left": hPadding, "height": iHeight});
 	  $("header h1").stop().animate({fontSize:hFontSize, width: hWidth, left:hLeft+20});
     $("main").stop().animate({borderTopWidth: hBorder});
 		$(".container h2").css({"top": hHeight});

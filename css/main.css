@@ -32,7 +32,7 @@ body {
 
 header {
 	background-color: white;
-	padding: 0 20px;
+	padding: 0;
 	position: fixed;
 	width: 100%;
 	z-index: 10;
@@ -40,16 +40,17 @@ header {
 
 header img {
 	float:left;
-	height: 83%;
+	height: 70%;
 	position: absolute;
-	top: 10%
+	top: calc(36px + 10%);
+	left: 20px;
 }
 header h1 {
 	color: var(--dark-blue);
 	display: block;
 	margin: 0;
 	position: absolute;
-	top: 10%;
+	top: calc(36px + 10%);
 	left: 160px;
 
 	font-family: 'Open Sans Condensed', sans-serif;
@@ -58,6 +59,26 @@ header h1 {
 
 header h1 span {
 	display: inline-block;
+}
+
+header nav {
+	display: flex;
+	background-color: var(--dark-blue);
+	height: 36px;
+	position: relative;
+	z-index: 20;
+}
+
+header nav a {
+	flex-grow: 1;
+	text-align: center;
+	color: white;
+	text-decoration: none;
+	padding-top: 6px;
+}
+
+header nav a + a {
+	border-left: 1px solid white;
 }
 
 header .menu {
