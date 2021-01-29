@@ -23,7 +23,7 @@
 
 
 
-	<link rel="stylesheet" type="text/css" href="css/main2.css?ssadf">
+	<link rel="stylesheet" type="text/css" href="css/main2.css?ssadzsf">
 </head>
 
 <body>
@@ -65,14 +65,16 @@
     <adress>Directrice artistique et musicale : Céline Binet<br>(418) 686-4040 poste 3641<br><a href="mailto:binet.celine@cscapitale.qc.ca">binet.celine@cscapitale.qc.ca</a></adress>
     <adress>Secrétariat :<br>(418) 686-4040 poste 3640<br><a href="mailto:ecole.maitrise@cscapitale.qc.ca">ecole.maitrise@cscapitale.qc.ca</a></adress>
   </footer>
+
+  <script>
+  $("#sound").click(function () {
+      $(this).toggleClass('muted');
+      const media = document.querySelector('#bgvid');
+      media.muted = !media.muted;
+
+  });
+  </script>
 </body>
 
-<script>
-$("#sound").click(function () {
-    $(this).toggleClass('muted');
-    const media = document.querySelector('#bgvid');
-    media.muted = !media.muted;
 
-});
-</script>
 </html>

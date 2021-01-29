@@ -8,7 +8,7 @@
 	--light-red: #d3b5c1;
 	--light-blue: #b8cedc;
 	--light-gold: #fef9e6; /*#fef3cd;*/
-	--transparent-blue: rgba(15,13,33,0.7);
+	--transparent-blue: rgba(15,13,33,0.8);
 }
 
 * {
@@ -123,11 +123,11 @@ body>footer {
 	margin-bottom:0;
 	display: flex;
 	justify-content: space-between;
-
+	flex-wrap: wrap;
 }
 
 footer>adress {
-	margin: 0 2rem;
+	margin: 2rem;
 	font-size: 0.75em;
 }
 
