@@ -1,0 +1,43 @@
+
+
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+	z-index:-100;
+}
+
+
+.video>#banner {
+	position: sticky;
+	margin-top: 80vh;
+	height: 100%;
+	background-color: var(--transparent-blue);
+}
+
+
+.video>article {
+  margin: 100vh auto 100vh;
+	background-color: var(--transparent-blue);
+	padding: 1em 2em;
+  position: relative;
+  height: 100%;
+	width: 400px;
+	max-width: 60%;
+	color: white;
+}
+
+.video>article h2 {
+  color: white;
+}
+
+body.video>article.left {
+	margin-right: 10%;
+}
+
+body.video>article.right {
+	margin-left: 10%;
+}

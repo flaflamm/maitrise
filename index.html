@@ -15,49 +15,73 @@
 	<meta name="msapplication-TileColor" content="#b91d47">
 	<meta name="theme-color" content="#ffffff">
 
-	<link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap" rel="stylesheet">
 
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<script>!window.jQuery && document.write('<script src="cdn/jquery-3.4.1.min.js"><\/script>')</script>
 
-	<script src="includes/loadScript.js"></script>
 
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+
 </head>
 
-<body>
+<body class="video">
+  <header id="banner">
+    <img src="logo/logo.svg">
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="maitrise.html">La Maîtrise</a>
+      <a href="parents.html">Parents</a>
+      <a href="realisations.html">Réalisations</a>
+      <img id="sound" class="muted" src="logo/notes.svg"/>
+    </nav>
+    <h1>La Maîtrise des petits <span>chanteurs de Québec</span></h1>
+  </header>
+
+  <video playsinline autoplay muted loop poster="images/la-maitrise-de-quebec2009-original.jpg" id="bgvid">
+    <source src="video/La Maîtrise des Petits Chanteurs de Québec 2014-11-28-sUqDFZ1aC_0.mp4" type="video/mp4">
+    <source src="video/Maîtrise Petits Chanteurs de Québec -  Purcell-zxWurdghvRE.mkv" type="video/mkv">
+  </video>
 
 
-<main>
-	<div class="band" id="PetitsChanteurs2009"></div>
+  <article class="right">
+    <img src="images/Maizerets Corrige.jpg">
+    <h2>La Maîtrise</h2>
+    <div class="text">
+      <p>Depuis 1915, la Maîtrise a contribué au développement personnel et musical de centaines d'enfants de niveau primaire et secondaire.</p>
+    </div>
+  </article>
 
-	<div class="caption">Les petits chanteurs, octobre 2009</div>
-
-
-	<!--<div class="clip">
-		<img class="filtered" src="images/la-maitrise-de-quebec2009-resized.jpg">
-	</div>
-
-	<div>Les petits chanteurs, octobre 2009</div>-->
-
-	<article class="container right">
-		<h2>La Maîtrise</h2>
-		<div class="text">
-			<p>Notre équipe de musiciens professionnels, sous la direction de Mme Céline Binet, veille à l'épanouissement musical des petits chanteurs.</p>
-		</div>
-		<img src="images/Maizerets Corrige.jpg">
-	</article>
-
-	<article class="container left">
-		<h2>Notre Équipe</h2>
-		<div class="text">
-			<p>Notre équipe de musiciens professionnels, sous la direction de Mme Céline Binet, veille à l'épanouissement musical des petits chanteurs.</p>
-		</div>
-		<img src="images/celine.jpg">
-	</article>
+  <article class="left">
+    <img src="images/celine.jpg">
+    <h2>Notre Équipe</h2>
+    <div class="text">
+      <p>Notre équipe de musiciens professionnels, sous la direction de Mme Céline Binet, veille à l'épanouissement musical des petits chanteurs.</p>
+    </div>
+  </article>
 
 
-</main>
+  <script>
+  $(function() {
+    //Load le footer
+    $('body').append('<footer></footer>');
+    $('footer').load( "includes/footer.html");
+
+    //fonction plaçant la banière au bas de l'écran lors du chargement de la page.
+    $('#banner').css('margin-top',$(window).height()-$('#banner').outerHeight());
+
+    $("#sound").click(function () { //Fonction permettant de mettre/couper le son
+      $(this).toggleClass('muted');
+      const media = document.querySelector('#bgvid');
+      media.muted = !media.muted;
+    });
+  });
+
+  </script>
 
 </body>
+
+
 </html>

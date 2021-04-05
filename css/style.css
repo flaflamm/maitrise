@@ -1,0 +1,155 @@
+/*Colors variables*/
+:root {
+	--logo-red: #6F0B31;
+	--logo-blue: #145E8C;
+	--logo-gold: #FBCD21;
+	--dark-red: #3d051c;
+	--dark-blue: #0f0d21;
+	--light-red: #d3b5c1;
+	--light-blue: #b8cedc;
+	--light-gold: #fef9e6; /*#fef3cd;*/
+	--transparent-blue: rgba(15,13,33,0.9);
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	font-size: 0.6rem;
+	font-family:  'Heebo', serif;
+	color: var(--dark-blue);
+}
+
+@media (min-width: 320px) {
+	body { font-size: calc( 0.6rem + 1vw - 3.2px ); }
+}
+
+@media (min-width: 1280px) {
+	body { font-size: calc( 0.6rem + 9.6px ); }
+}
+
+
+#banner {
+	position: sticky;
+	top: 0;
+	width: 100%;
+	z-index: 100;
+	padding: 1em 2em 0.5em;
+	color: white;
+	background-color: var(--dark-blue);
+}
+
+
+#banner a {
+	color: white;
+	text-decoration: none;
+}
+
+#banner>img {
+	height: 3.8em;
+	float: left;
+	padding-right: 1em;
+}
+
+#banner nav {
+	display: flex;
+	justify-content: space-between;
+}
+
+#banner nav>img {
+	height: 1em;
+	cursor: pointer;
+}
+
+#banner nav>img.muted {
+	opacity: 0.5;
+}
+
+
+.imageBand {
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position-x: 0;
+	background-position-y: 0;
+	background-color: rgba(15, 13, 33, 0);
+	background-blend-mode: luminosity;
+
+	-webkit-transform: translateZ(999px) scale(1);
+	transform: translateZ(999px) scale(1);
+	z-index: 1;
+
+}
+
+#PetitsChanteurs2009 {
+	background-image: url("../images/la-maitrise-de-quebec2009-resized.jpg");
+	height: 58vw;
+}
+
+
+
+
+
+article {
+	width: 80%;
+	margin: 2em auto;
+	text-align: justify;
+}
+
+
+article>img {
+  width: 50%;
+  position: relative;
+}
+
+article.left>img {
+	float: right;
+	right: -20%;
+	margin-left: -10%;
+}
+
+article.right>img {
+	float: left;
+	left: -20%;
+	margin-right: -10%
+}
+
+h1 {
+	font-size: 2em;
+	font-weight: 600;
+}
+
+h2 {
+	font-size: 1.4em;
+	font-weight: 600;
+	color: var(--logo-blue);
+}
+
+article p {
+	margin: 0.5em 0;
+}
+
+
+footer {
+	width: 100%;
+	margin-bottom:0;
+	padding: 1em 2em 1.5em;
+	color: white;
+	background-color: var(--dark-blue);
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+footer>adress {
+	margin: 0.5rem 2rem;
+	font-size: 0.75em;
+}
+
+footer>adress>a {
+	color: white;
+}
