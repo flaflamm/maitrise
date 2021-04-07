@@ -28,8 +28,10 @@
 </head>
 
 <body>
-  <div class="imageBand" id="PetitsChanteurs2009"></div>
-  
+  <div class="parallaxContainer">
+    <div class="imageBand" id="PetitsChanteurs2009"></div>
+
+
   <article>
     <h1>Présentation</h1>
     <h2>Une riche tradition musicale, une formation solide et complète</h2>
@@ -53,15 +55,14 @@
       <p>Chaque année, les petits chanteurs participent à de nombreux concerts de calibre professionnel. Le 1er novembre dernier, ils ont chanté La Petite messe solennelle de Rossini au Palais Montcalm, en compagnie de solistes professionnels qui étaient aussi d’anciens petits chanteurs. Au cours de la saison 2007-2008, ils auront chanté avec la Musique des Voltigeurs et avec les Violons du Roy, et pris part à la Symphonie “des Mille” de Mahler, un grand projet de l’Orchestre symphonique de Québec réunissant 1000 musiciens et chanteurs, présenté en mars 2008. Tout récemment, la Maîtrise a pris part aux festivités du 400e anniversaire de Québec, notamment dans le cadre d’un rassemblement de 1400 choristes du Québec et d’Europe présenté devant plus de 10 000 personnes.</p>
   </article>
 
-<script>
-  $(window).scroll(function() { //Fonction permettant de changer la couleur du bandeau et de le déplacer.
-    var imageBand = $(".imageBand");
-    var s = $(window).scrollTop();
-    var p = s / imageBand.height();
+  </div>
 
+<script>
+  $(".parallaxContainer").scroll(function() { //Fonction permettant de changer la couleur du bandeau.
+    var imageBand = $(".imageBand");
+    var p = $(".parallaxContainer").scrollTop() / imageBand.height();
 
     if ( p<=1) { imageBand.css("background-color", "rgba(15,13,33,"+(p)+")"); }
-    //if ( p<=1 ) { imageBand.css("background-position-y", (2*s/3)+"px"); }
   });
 </script>
 

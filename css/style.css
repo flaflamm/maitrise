@@ -69,25 +69,32 @@ body {
 	opacity: 0.5;
 }
 
+.parallaxContainer {
+	width: 100%;
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	perspective: 1px;
+	perspective-origin: 0 0;
+}
+
 
 .imageBand {
 	width: 100%;
+	max-height: 70vh;
 	background-repeat: no-repeat;
-	background-size: 100%;
-	background-position-x: 0;
+	background-size: contain;
+	background-position-x: 50%;
 	background-position-y: 0;
 	background-color: rgba(15, 13, 33, 0);
 	background-blend-mode: luminosity;
-
-	-webkit-transform: translateZ(999px) scale(1);
-	transform: translateZ(999px) scale(1);
-	z-index: 1;
-
+	transform-origin: 0px 0px;
+	transform: translateZ(-2px) scale(3);
 }
 
 #PetitsChanteurs2009 {
 	background-image: url("../images/la-maitrise-de-quebec2009-resized.jpg");
-	height: 58vw;
+	height: 59.4vw;
 }
 
 
@@ -95,9 +102,12 @@ body {
 
 
 article {
-	width: 80%;
-	margin: 2em auto;
+	width: 100%;
+	padding: 2em 10%;
 	text-align: justify;
+	background-color: white;
+	transform-origin: 0 0;
+	transform: translateZ(0px) scale(1);
 }
 
 

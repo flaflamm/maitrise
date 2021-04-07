@@ -1,8 +1,11 @@
 $(function() {
 	//Load le header de la page
-	$('body').prepend('<header id="banner"></header>');
-	$('header').load( "includes/header.html");
+	$('.parallaxContainer').prepend('<header id="banner"></header>');
+	$('header').load( "includes/header.html", function() {
+			$('.imageBand').css('transform-origin', '0px -'+$('#banner').outerHeight()+'px');
+	});
+
 	//Et le footer
-	$('body').append('<footer></footer>');
+	$('.parallaxContainer').append('<footer></footer>');
 	$('footer').load( "includes/footer.html");
 });
